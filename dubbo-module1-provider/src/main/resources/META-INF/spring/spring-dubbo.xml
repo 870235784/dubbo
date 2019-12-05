@@ -10,8 +10,8 @@
     <!-- 当前项目在整个分布式架构中的唯一名称, owner表示当前项目由谁维护-->
     <dubbo:application name="dubbo-module1-provider" owner="tca"/>
 
-    <!-- 当前项目注册到zookeeper注册中心-->
-    <dubbo:registry address="zookeeper://localhost:2181"/>
+    <!-- 当前项目注册到哪个注册中心 N/A表示不注册 -->
+    <dubbo:registry address="N/A"/>
 
     <!-- 当前服务发布出去使用的协议:如webservice, dubbo, thrift, http 以及端口号 -->
     <dubbo:protocol name="dubbo" port="20880"/>

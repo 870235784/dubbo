@@ -10,10 +10,11 @@
     <!-- 当前项目在整个分布式架构中的唯一名称, owner表示当前项目由谁维护-->
     <dubbo:application name="dubbo-module1-provider" owner="tca"/>
 
-    <!-- 当前项目注册到zookeeper注册中心-->
-    <dubbo:registry address="zookeeper://localhost:2181"/>
+    <!-- 当前项目注册到哪个注册中心 N/A表示不注册 -->
+    <dubbo:registry address="N/A"/>
 
     <!-- 生成一个远程服务的调用代理 -->
-    <dubbo:reference id="orderService" interface="com.tca.dubbomodule1api.service.IOrderService"/>
+    <dubbo:reference id="orderService" interface="com.tca.dubbomodule1api.service.IOrderService"
+        url="dubbo://192.168.1.104:20880/com.tca.dubbomodule1api.service.IOrderService"/>
 
 </beans>
