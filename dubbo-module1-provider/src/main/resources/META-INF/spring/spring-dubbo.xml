@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 当前项目在整个分布式架构中的唯一名称, owner表示当前项目由谁维护-->
+    <dubbo:application name="dubbo-module1-provider" owner="tca"/>
+
+    <!-- 当前项目注册到哪个注册中心 N/A表示不注册 -->
+    <dubbo:registry address="N/A"/>
+
+    <!-- 当前服务发布出去使用的协议:如webservice, dubbo, thrift, http 以及端口号 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 当前服务具体需要发布的接口及实现 -->
+    <dubbo:service interface="com.tca.dubbomodule1api.service.IOrderService"
+        ref="orderService"/>
+    <bean id="orderService" class="com.tca.dubbomodule1provider.service.OrderServiceImpl"/>
+
+</beans>
