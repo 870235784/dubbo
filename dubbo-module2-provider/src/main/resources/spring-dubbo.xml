@@ -8,7 +8,7 @@
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 当前项目在整个分布式架构中的唯一名称, owner表示当前项目由谁维护-->
-    <dubbo:application name="dubbo-module1-provider" owner="tca"/>
+    <dubbo:application name="dubbo-module2-provider" owner="tca"/>
 
     <!-- 当前项目注册到zookeeper注册中心-->
     <dubbo:registry address="zookeeper://localhost:2181"/>

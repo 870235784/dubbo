@@ -6,6 +6,7 @@ import com.tca.dubbomodule1api.service.resp.OrderResp;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zhoua
@@ -13,7 +14,7 @@ import java.util.Date;
  */
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-dubbo.xml");
         IOrderService orderService = (IOrderService)context.getBean("orderService");
 
@@ -24,5 +25,7 @@ public class App {
 
         OrderResp orderResp = orderService.order(req);
         System.out.println("调用结果 resp = " + orderResp);
+
+        TimeUnit.MINUTES.sleep(10L);
     }
 }
