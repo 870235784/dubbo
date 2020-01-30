@@ -16,9 +16,12 @@
     <!-- 当前服务发布出去使用的协议:如webservice, dubbo, thrift, http 以及端口号 -->
     <dubbo:protocol name="dubbo" port="20880"/>
 
+    <!-- 添加hessian协议支持 -->
+    <dubbo:protocol name="hessian" port="8095" server="jetty"/>
+
     <!-- 当前服务具体需要发布的接口及实现 -->
     <dubbo:service interface="com.tca.dubbomodule1api.service.IOrderService"
-        ref="orderService"/>
+        ref="orderService" protocol="hessian"/>
     <bean id="orderService" class="com.tca.dubbomodule1provider.service.OrderServiceImpl"/>
 
 </beans>

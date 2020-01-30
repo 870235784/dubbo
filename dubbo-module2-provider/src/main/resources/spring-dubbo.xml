@@ -14,6 +14,7 @@
     <dubbo:registry address="zookeeper://localhost:2181"/>
 
     <!-- 生成一个远程服务的调用代理 -->
-    <dubbo:reference id="orderService" interface="com.tca.dubbomodule1api.service.IOrderService"/>
+    <dubbo:reference id="orderService" interface="com.tca.dubbomodule1api.service.IOrderService"
+        protocol="hessian"/>
 
 </beans>
